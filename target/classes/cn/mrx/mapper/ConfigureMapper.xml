@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.mrx.mapper.ConfigureMapper">
+	<resultMap id="BaseResultMap" type="cn.mrx.dto.Configure">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="linkname" property="linkname" jdbcType="VARCHAR" />
+		<result column="linkurl" property="linkurl" jdbcType="VARCHAR" />
+		<result column="copyright" property="copyright" jdbcType="VARCHAR" />
+		<result column="advanceorder" property="advanceorder" jdbcType="INTEGER" />
+		<result column="type" property="type" jdbcType="INTEGER" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, linkname, linkurl, copyright, advanceorder, type
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from t_configure
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from t_configure
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="cn.mrx.dto.Configure">
+		insert into t_configure (id, linkname, linkurl,
+		copyright, advanceorder, type
+		)
+		values (#{id,jdbcType=INTEGER}, #{linkname,jdbcType=VARCHAR},
+		#{linkurl,jdbcType=VARCHAR},
+		#{copyright,jdbcType=VARCHAR}, #{advanceorder,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="cn.mrx.dto.Configure">
+		insert into t_configure
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="linkname != null">
+				linkname,
+			</if>
+			<if test="linkurl != null">
+				linkurl,
+			</if>
+			<if test="copyright != null">
+				copyright,
+			</if>
+			<if test="advanceorder != null">
+				advanceorder,
+			</if>
+			<if test="type != null">
+				type,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="linkname != null">
+				#{linkname,jdbcType=VARCHAR},
+			</if>
+			<if test="linkurl != null">
+				#{linkurl,jdbcType=VARCHAR},
+			</if>
+			<if test="copyright != null">
+				#{copyright,jdbcType=VARCHAR},
+			</if>
+			<if test="advanceorder != null">
+				#{advanceorder,jdbcType=INTEGER},
+			</if>
+			<if test="type != null">
+				#{type,jdbcType=INTEGER},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="cn.mrx.dto.Configure">
+		update t_configure
+		<set>
+			<if test="linkname != null">
+				linkname = #{linkname,jdbcType=VARCHAR},
+			</if>
+			<if test="linkurl != null">
+				linkurl = #{linkurl,jdbcType=VARCHAR},
+			</if>
+			<if test="copyright != null">
+				copyright = #{copyright,jdbcType=VARCHAR},
+			</if>
+			<if test="advanceorder != null">
+				advanceorder = #{advanceorder,jdbcType=INTEGER},
+			</if>
+			<if test="type != null">
+				type = #{type,jdbcType=INTEGER},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.mrx.dto.Configure">
+		update t_configure
+		set linkname = #{linkname,jdbcType=VARCHAR},
+		linkurl = #{linkurl,jdbcType=VARCHAR},
+		copyright = #{copyright,jdbcType=VARCHAR},
+		advanceorder = #{advanceorder,jdbcType=INTEGER},
+		type = #{type,jdbcType=INTEGER}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<!-- 获取所有的超链接 -->
+	<select id="selectAllConfigure" resultMap="BaseResultMap">
+		select * from t_configure
+	</select>
+	
+	<!-- 获取可以提前几天购票 -->
+	<select id="selectDaysByType" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+		select advanceorder from t_configure where type = #{type}
+	</select>
+</mapper>

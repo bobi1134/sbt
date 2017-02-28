@@ -1,0 +1,411 @@
+/** 统一信息配置 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: "微软雅黑";
+    font-size: 12px;
+}
+
+@font-face {
+    font-family: ygyxs;
+    src: url('../fonts/ygyxs.ttf');
+}
+
+@font-face {
+    font-family: Muli;
+    src: url('../fonts/Muli.ttf');
+}
+
+@font-face {
+    font-family: HU;
+    src: url('../fonts/HelveticaNeue-UltraLigExt.otf');
+}
+
+//选中文字的变化
+::selection {
+    background: #FF9;
+    color: #F00;
+}
+
+
+/** less代码 */
+
+
+/********************* choose.html页面 *********************/
+
+.container_choose {
+    // background: url(../imgs/bg01.jpg);
+    height: auto;
+    width: 100%;
+    // border: 1px solid red;
+    min-width: 750px;
+    .choose_header {
+        // border: 1px solid #000;
+        overflow: auto;
+        .logo {
+            float: left;
+            margin-left: 20px;
+            .logo-title {
+                font-family: "ygyxs";
+                font-size: 30px;
+                float: right;
+                line-height: 95px;
+            }
+        }
+        .button {
+            float: right;
+            margin-right: 20px;
+            margin-top: 38px;
+            a {
+                font-family: "Muli";
+                font-size: 20px;
+                border: 1px solid #000;
+                padding: 8px;
+                border-radius: 4px;
+            }
+        }
+        .session_user {
+            margin-right: 20px;
+            margin-top: 25px;
+            overflow: auto;
+            img {
+                float: right;
+                border-radius: 25px;
+            }
+            .logout{
+	                float: right;
+                	font-family: "Muli";
+                    font-size: 20px;
+                    border: 1px solid #000;
+                    padding: 8px;
+                    border-radius: 4px;
+                    margin: 3px 0 0 5px;
+                }
+        }
+    }
+    .choose_search {
+        // border: 1px solid red;
+        margin-top: 20px;
+        .search {
+            margin-left: 30px;
+            font-size: 18px;
+            input {
+                width: 150px;
+                height: 30px;
+                font-size: 18px;
+                font-family: "Muli";
+                outline: 0;
+                border: 1px solid #000;
+                padding: 0 3px 0 3px;
+            }
+            #datepicker {
+                cursor: pointer;
+            }
+            button {
+                width: 80px;
+                height: 33px;
+                font-family: "微软雅黑";
+                border-radius: 4px;
+                outline: 0;
+                border: 1px solid #000;
+                background: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+    .choose_table {
+        padding: 10px 0 10px 0;
+        // border: 1px solid red;
+        margin-top: 20px;
+        min-height: 371px;
+        table {
+            border: #000 1px solid;
+            border-collapse: collapse;
+            // border:1px solid #000;
+            margin: 0 auto;
+            tr th {
+                width: 12.5%;
+                font-size: 18px;
+                padding: 5px 0 5px 0;
+            }
+            tr td {
+                font-size: 16px;
+                text-align: center;
+                padding: 5px 0 5px 0;
+                .book {
+                    font-size: 12px;
+                    border: 1px solid #000;
+                    padding: 3px 0 3px 0;
+                    margin: 0 auto;
+                    width: 50%;
+                    border-radius: 5px;
+                    display: block;
+                }
+            }
+        }
+    }
+    .choose_footer {
+        height: 395px;
+        width: 100%;
+        background-color: #000;
+        // float: left;
+        color: #fff;
+        text-align: center;
+        margin-top: 20px;
+        .container {
+            width: 80%;
+            height: 90%;
+            margin: 0 auto;
+            .link,
+            .source,
+            .go,
+            .qq,
+            .wechat {
+                // opacity: 0;
+                margin-top: 20px;
+                float: left;
+                width: 20%;
+                span,
+                p {
+                    font-size: 20px;
+                    font-family: "ygyxs";
+                }
+                li {
+                    margin-top: 10px;
+                }
+                a {
+                    color: #fff;
+                    font-size: 12px;
+                }
+            }
+            .source {
+                font-family: "HU";
+            }
+        }
+        .copyright {
+            width: 100%;
+            border-top: 1px solid #222;
+            font-family: "Muli";
+            .info {
+                // opacity: 0;
+                margin-top: 10px;
+                display: inline-block;
+                font-family: "HU";
+            }
+        }
+    }
+}
+
+/******************************回到顶部、登陆、注册、提示信息********************************************/
+//回到顶部
+.scroll_top {
+    z-index: 999;
+    width: 60px;
+    height: 50px;
+    position: fixed;
+    right: 15px;
+    bottom: 10px;
+    display: none;
+    .s_cursor {
+        width: 60px;
+        height: 50px;
+        display: block;
+        background: url("../imgs/icon_top.png") no-repeat center;
+        cursor: pointer;
+        background-color: #444;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+        border-radius: 4px;
+    }
+}
+
+//Sign In & Sign Up 滚动条设置为z-index:10 yy的z-inndex:8 login_box和reg_box的z-index:9
+.yy {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: 8;
+    background: #000;
+}
+.login_box,
+.reg_box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 240px;
+    z-index: 9;
+    border: 1px solid #000;
+    margin-left: -150px;
+    margin-top: -120px;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0px 0px 10px #000;
+    .title {
+        width: 300px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        .a_1 {
+            margin-left: 13px;
+            float: left;
+            margin-top: 6px;
+        }
+        .a_2 {
+            float: right;
+            border: 1px solid #e1e1e1;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            line-height: 22px;
+            margin-top: 13px;
+            margin-right: 14px;
+            color: #969696;
+            transition: 2s;
+            -ms-transition: 1.5s;
+            -moz-transition: 1.5s;
+            -webkit-transition: 1.5s;
+            -o-transition: 1.5s;
+        }
+        .a_2:hover {
+            background: #535353;
+            color: #fff;
+            transition: 1.5s;
+            -ms-transition: 1.5s;
+            -moz-transition: 1.5s;
+            -webkit-transition: 1.5s;
+            -o-transition: 1.5s;
+        }
+    }
+    .username,
+    .password,.email {
+        border: 1px solid #000;
+        width: 90%;
+        margin: 20px auto;
+        overflow: auto;
+        .logo {
+            width: 20px;
+            height: 20px;
+            margin-top: 9px;
+            margin-left: 20px;
+            background: url(../imgs/main_icon.png) -82px -214px;
+            float: left;
+        }
+        .txt {
+            width: 202px;
+            height: 38px;
+            border: 0px;
+            outline: 0px;
+            float: left;
+            font-size: 20px;
+            padding: 0px 15px 0px 5px;
+            // border: 1px solid red;
+            margin-left: 5px;
+        }
+    }
+    .password {
+        .logo {
+            width: 20px;
+            height: 20px;
+            margin-top: 10px;
+            margin-left: 20px;
+            background: url(../imgs/main_icon.png) 91px -83px;
+            float: left;
+        }
+    }
+    .email {
+        .logo {
+            width: 20px;
+            height: 20px;
+            margin-top: 10px;
+            margin-left: 20px;
+            background: url(../imgs/main_icon.png) 118px -110px;
+            float: left;
+        }
+    }
+    .loginbtn {
+        .btn {
+            width: 273px;
+            height: 40px;
+            border: 0px;
+            outline: 0px;
+            border-radius: 4px;
+            margin-top: 20px;
+            background: #414141;
+            cursor: pointer;
+            color: #fff;
+            font-size: 20px;
+            font-family: "微软雅黑";
+            margin: 0 auto;
+            margin-left: 14px;
+        }
+        .btn:hover {
+            background: #000;
+        }
+    }
+}
+.reg_box {
+    height: 360px;
+    margin-top: -180px;
+    margin-bottom: 15px;
+    overflow: auto;
+    .vcode {
+        margin-left: 15px;
+        margin-bottom: 20px;
+        overflow: auto;
+        img {
+            float: left;
+        }
+        input {
+            width: 142px;
+            height: 36px;
+            outline: 0px;
+            float: left;
+            font-size: 20px;
+            padding: 0px 15px 0px 5px;
+            margin-left: 5px;
+            border: 1px solid #000;
+            float: left;
+        }
+    }
+}
+
+//tip info
+.tip{
+    border:1px solid #000;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 20;
+    background-color: #414141;
+    border-radius: 5px;
+    .loading{
+        float: left;
+    }
+    .text{
+        float: left;
+        margin-left: 40px;
+        color: #fff;
+        font-size: 14px;
+        margin: 5px 5px 0 5px
+    }
+}

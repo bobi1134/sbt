@@ -1,0 +1,290 @@
+/** 统一信息配置 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: "微软雅黑";
+    font-size: 12px;
+}
+
+@font-face {
+    font-family: ygyxs;
+    src: url('../fonts/ygyxs.ttf');
+}
+
+@font-face {
+    font-family: Muli;
+    src: url('../fonts/Muli.ttf');
+}
+
+@font-face {
+    font-family: HU;
+    src: url('../fonts/HelveticaNeue-UltraLigExt.otf');
+}
+
+@font-face {
+    font-family: LGDR;
+    src: url('../fonts/Lets go Digital Regular.ttf');
+}
+
+
+/** less代码 */
+
+
+/********************* zone.html页面 *********************/
+
+.container_zone {
+    height: auto;
+    width: 100%;
+    min-width: 750px;
+    .zone_header {
+        // border: 1px solid #000;
+        overflow: auto;
+        .logo {
+            float: left;
+            margin-left: 20px;
+            .logo-title {
+                font-family: "ygyxs";
+                font-size: 30px;
+                float: right;
+                line-height: 95px;
+            }
+        }
+        .button {
+            float: right;
+            margin-right: 20px;
+            margin-top: 38px;
+            a {
+                font-family: "Muli";
+                font-size: 20px;
+                border: 1px solid #000;
+                padding: 8px;
+                border-radius: 4px;
+            }
+        }
+        .session_user {
+            margin-right: 20px;
+            margin-top: 25px;
+            overflow: auto;
+            img {
+                float: right;
+                border-radius: 25px;
+            }
+            .logout{
+	                float: right;
+                	font-family: "Muli";
+                    font-size: 20px;
+                    border: 1px solid #000;
+                    padding: 8px;
+                    border-radius: 4px;
+                    margin: 3px 0 0 5px;
+                }
+        }
+    }
+    //个人中心信息
+    .zone_pc {
+        border: 1px solid #000;
+        min-height: 371px;
+        width: 96%;
+        margin: 10px auto;
+        .location {
+            font-size: 18px;
+            .icon {
+                font-size: 18px;
+                margin-left: 5px;
+            }
+        }
+    }
+    //个人中心-消息通知
+    .zone_message {
+        ul {
+            //border:1px solid red;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            li {
+                margin:10px 0 10px 0;
+                margin-right: 20px;
+                overflow:auto;
+                .order {
+                    font-size: 21px;
+                    font-family: "LGDR";
+                    float: left;
+                    margin-top: 4px;
+                }
+                .title {
+	                text-overflow: ellipsis;
+	                white-space: nowrap;
+	                overflow: hidden;
+	                max-width:999px;
+                    display: block;
+                    float: left;
+                    margin-left: 3px;
+                	a{
+	                    font-size: 18px;
+	                    color: #06060b;
+	                }
+	                a:hover{
+	                    font-size: 18px;
+	                    color: #000;
+	                }
+                }
+                .cz{
+                	a{
+	        		    width: 22px;
+					    height: 22px;
+					    //border: 1px solid red;
+					    display: block;
+					    float: left;
+					    border-radius: 2px;
+                	}
+                	.delete{
+                		margin-right:10px;
+                		background:url(../imgs/main_icon.png) -118px -177px;
+                		padding: 3px;
+                	}
+                }
+                .content{
+                	border:1px solid #000;
+            	    float: left;
+					margin: 10px auto;
+					font-size: 14px;
+					width:99%;
+					display:none;
+                }
+            }
+        }
+    }
+    
+    //个人中心-个人资料
+    .zone_info .info{
+    	
+    }
+    
+    //个人中心-我的订单
+    .zone_order .order{
+    	
+    }
+    
+    .zone_footer {
+        height: 395px;
+        width: 100%;
+        background-color: #06060b;
+        color: #fff;
+        text-align: center;
+        margin-top: 20px;
+        .container {
+            width: 80%;
+            height: 90%;
+            margin: 0 auto;
+            .link,
+            .source,
+            .go,
+            .qq,
+            .wechat {
+                margin-top: 20px;
+                float: left;
+                width: 20%;
+                span,
+                p {
+                    font-size: 20px;
+                    font-family: "ygyxs";
+                }
+                li {
+                    margin-top: 10px;
+                }
+                a {
+                    color: #fff;
+                    font-size: 12px;
+                }
+            }
+            .source {
+                font-family: "HU";
+            }
+        }
+        .copyright {
+            width: 100%;
+            border-top: 1px solid #222;
+            font-family: "Muli";
+            .info {
+                margin-top: 10px;
+                display: inline-block;
+                font-family: "HU";
+            }
+        }
+    }
+    //回到顶部
+    .scroll_top {
+        // z-index: 2;
+        width: 60px;
+        height: 50px;
+        position: fixed;
+        right: 15px;
+        bottom: 10px;
+        display: none;
+        .s_cursor {
+            width: 60px;
+            height: 50px;
+            display: block;
+            background: url("../imgs/icon_top.png") no-repeat center;
+            cursor: pointer;
+            background-color: #444;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+            border-radius: 4px;
+        }
+    }
+    //固定在左边的菜单
+    .zone_menu {
+        // z-index: 999;
+        width: 200px;
+        height: 371px;
+        border: 1px solid #000;
+        position: fixed;
+        left: -181px;
+        top: 114px;
+        background-color: #282828;
+        ul li {
+            border-bottom: 1px solid #000000;
+            border-top: 1px solid #414141;
+            a {
+                color: #fff;
+                width: 100%;
+                display: block;
+                padding: 15px 0 15px 0;
+                text-align: center;
+                font-size: 16px;
+                i {
+                    margin-right: 10px;
+                }
+            }
+            a:hover {
+                background-color: #000;
+            }
+        }
+        .icon-xiangzuo,
+        .icon-xiangyou {
+            position: absolute;
+            right: 0;
+            top: 175px;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+}

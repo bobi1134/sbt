@@ -1,0 +1,54 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+img {
+    border: 0px
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
+body {
+    font-family: "微软雅黑";
+    font-size: 12px;
+}
+
+@font-face {
+    font-family: ygyxs;
+    src: url('../fonts/ygyxs.ttf');
+}
+@font-face {
+    font-family: Muli;
+    src: url('../fonts/Muli.ttf');
+}
+
+
+/** index.html */
+
+.container_index .header img {
+    float: left;
+}
+
+.container_index .header .logo .logo-title {
+    font-family: "ygyxs";
+    font-size: 30px;
+    float: left;
+    line-height: 95px;
+}
+
+.container_index .header .button a{
+	font-family: "Muli";
+	font-size: 20px;
+}
+
+.container_index .header .button{
+	margin-right: 20px;
+	a{
+		font-family: "Muli";
+		font-size: 20px;
+	}
+}

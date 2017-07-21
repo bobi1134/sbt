@@ -25,7 +25,6 @@ public class WebController {
 	
 	/**
 	 * 首页
-	 * @param id
 	 * @return
 	 */
 	@RequestMapping("/index")

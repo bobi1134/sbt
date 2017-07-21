@@ -5,7 +5,7 @@
 	<artifactId>bus</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bus Maven Webapp</name>
+	<name>sbt Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<!-- 依赖jar -->
@@ -174,12 +174,27 @@
 
 	</dependencies>
 
-	<!-- 解决Maven控制台乱码 -->
-	<properties>
-		<argLine>-Dfile.encoding=UTF-8</argLine>
-	</properties>
-	
 	<build>
-		<finalName>bus</finalName>
+		<finalName>sbt</finalName>
+
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 	</build>
+
+	<properties>
+		<!-- 解决Maven控制台乱码 -->
+		<argLine>-Dfile.encoding=UTF-8</argLine>
+		<!-- jdk编译版本 -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 </project>
